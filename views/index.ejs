@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Paix a Hotel Category Flat Bootstarp responsive Website Template | Home :: w3layouts</title>
+<title>BookMySpot</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Paix Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -17,6 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="stylesheets/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="stylesheets/style.css" rel='stylesheet' type='text/css' />
 <script src="javascripts/jquery.min.js"></script>
+
 <!---- start-smoth-scrolling---->
 <script type="text/javascript" src="javascripts/move-top.js"></script>
 <script type="text/javascript" src="javascripts/easing.js"></script>
@@ -36,16 +37,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="head">
 			<div class="logo">
-				<a href="index.ejs"><img src="images/logo.png" alt="" /></a>
+				<a href="/"><img src="images/logo.png" alt="" /></a>
 			</div>
 			<div class="navigation">
 				 <span class="menu"></span> 
 					<ul class="navig">
-						<li><a href="index.ejs"  class="active hvr-bounce-to-bottom">Home</a></li>
-						<li><a href="about.ejs" class="hvr-bounce-to-bottom">About</a></li>
-						<li><a href="services.ejs" class="hvr-bounce-to-bottom">Services</a></li>
-						<li><a href="typo.ejs" class="hvr-bounce-to-bottom">Typo</a></li>
-						<li><a href="contact.ejs" class="hvr-bounce-to-bottom">Contact</a></li>
+						<li><a href="/"  class="active hvr-bounce-to-bottom">Home</a></li>
+						<li><a href="/about" class="hvr-bounce-to-bottom">About</a></li>
+						<li><a href="/services" class="hvr-bounce-to-bottom">Services</a></li>
+						<li><a href="/typo" class="hvr-bounce-to-bottom">Typo</a></li>
+						<li><a href="/contact" class="hvr-bounce-to-bottom">Contact</a></li>
 					</ul>
 			</div>
 				<div class="clearfix"></div>
@@ -61,11 +62,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 	<!-- script-for-menu -->
-	<!--start-banner-->
+    <!--start location form -->
 	<div class="banner">
 		<div class="container">
 			<div class="banner-top">
-				<h1>For Booking</h1>
+				<h1>Find a sweet spot</h1>
 				<div class="banner-bottom">
 					<div class="bnr-one">
 						<div class="bnr-left">
@@ -78,10 +79,83 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="bnr-one">
 						<div class="bnr-left">
-							<p>Ckeck Out</p>
+							<p>City</p>
 						</div>
 						<div class="bnr-right">
-							<input class="date" id="datepicker1" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=>
+							<select name="select1" id="select1">
+								<option  class="rm" value="1">Mumbai</option>
+								<option  class="rm" value="2">Bangalore</option>
+							</select>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="bnr-one">
+						<div class="bnr-left">
+							<p>Locality</p>
+						</div>
+						<div class="bnr-right">
+							<select name="select2" id="select2">
+								<option value="1">Hiranandani</option>
+								<option value="1">Mulund</option>
+								<option value="1">Andheri</option>
+								<option value="1">Vashi</option>
+								<option value="2">Kormangala</option>
+								<option value="2">BTM Layout</option>
+								<option value="2">Whitefield</option>
+								<option value="2">Airport</option>
+							</select>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="bnr-btn">
+						<form>
+							<input type="submit" value="Search">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	$("#select1").change(function() {
+	  if ($(this).data('options') == undefined) {
+	    /*Taking an array of all options-2 and kind of embedding it on the select1*/
+	    $(this).data('options', $('#select2 option').clone());
+	  }
+	  var id = $(this).val();
+	  var options = $(this).data('options').filter('[value=' + id + ']');
+	  $('#select2').html(options);
+	});
+	</script>
+	<!--end location form -->
+
+	<!--start-banner
+	<div class="banner">
+		<div class="container">
+			<div class="banner-top">
+				<h1>Booking</h1>
+				<div class="banner-bottom">
+					<div class="bnr-one">
+						<div class="bnr-left">
+							<p>Ckeck In</p>
+						</div>
+						<div class="bnr-right">
+							<input class="date" id="datepicker" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="bnr-one">
+						<div class="bnr-left">
+							<p>Hours</p>
+						</div>
+						<div class="bnr-right">
+							<select>
+								<option  class="rm" value="1">1</option>
+								<option  class="rm" value="2">2</option>
+								<option  class="rm" value="3">3</option>
+								<option  class="rm" value="4">4</option>
+							</select>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -91,38 +165,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="bnr-right">
 							<select>
-								<option  class="rm" value="volvo">0</option>
-								<option  class="rm" value="saab">1</option>
-								<option  class="rm" value="opel">2</option>
-								<option  class="rm" value="audi">3</option>
+								<option  class="rm" value="1">1</option>
+								<option  class="rm" value="2">2</option>
+								<option  class="rm" value="3">3</option>
+								<option  class="rm" value="4">4</option>
 							</select>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="bnr-one">
 						<div class="bnr-left">
-							<p>Room</p>
+							<p>Table</p>
 						</div>
 						<div class="bnr-right">
 							<select>
 								<option value="volvo">Select a type</option>
-								<option value="saab">Single</option>
-								<option value="opel">Double</option>
-								<option value="audi">Suite</option>
+								<option value="2">2 - seater</option>
+								<option value="4">4 - seater</option>
+								<option value="6">6 - seater</option>
+								<option value="8">8+ - seater</option>
 							</select>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="bnr-btn">
 						<form>
-							<input type="submit" value="Book Now">
+							<input type="submit" value="Search a Spot">
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--end-banner-->
+	end-banner-->
 	<!---start-date-piker---->
 		<link rel="stylesheet" href="stylesheets/jquery-ui.css" />
 		<script src="javascripts/jquery-ui.js"></script>
@@ -352,45 +427,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!--end-blog-->
-	<!--start-events-->
-	<div class="events" id="events">
-		<div class="container">
-			<div class="events-top heading">
-				<h3>UPCOMING EVENTS</h3>
-			</div>
-			<div class="events-bottom">
-				<div class="col-md-4 events-main">
-					<div class="events-left">
-						<img src="images/e-1.jpg" alt="" />
-						<div class="event-btm">
-							<h4>March 14, 2014</h4>
-						</div>
-						<p>Duis accumsan risus id tellus viverra tincidunt. Quisque vel velit orci. Integer ante tellus, congue at convallis at, rhoncus ut massa.</p>
-					</div>
-				</div>
-				<div class="col-md-4 events-main">
-					<div class="events-left">
-						<img src="images/e-2.jpg" alt="" />
-						<div class="event-btm">
-							<h4>August 14, 2014</h4>
-						</div>
-						<p>Duis accumsan risus id tellus viverra tincidunt. Quisque vel velit orci. Integer ante tellus, congue at convallis at, rhoncus ut massa.</p>
-					</div>
-				</div>
-				<div class="col-md-4 events-main">
-					<div class="events-left">
-						<img src="images/e-3.jpg" alt="" />
-						<div class="event-btm">
-							<h4>May 14, 2014</h4>
-						</div>
-						<p>Duis accumsan risus id tellus viverra tincidunt. Quisque vel velit orci. Integer ante tellus, congue at convallis at, rhoncus ut massa.</p>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-	<!--end-events-->
+	
 	<!--start-footer-->
 	<div class="footer">
 		<div class="container">
@@ -398,9 +435,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>FOLLOW US</h3>
 			</div>
 			<div class="touch-bottom">
-				<p>756 gt globel Place, CD-Road,M 07 435.</p>
-				<h6 >1 234 567 9871 , 800-2345-679</h6>
-				<p>purus tincidunt egestas</p>
+				<p>Flat 501, Horizon Point</p>
+				<h6 >Neptune Living Point Society</h6>
+				<p>Bhandup West, Mumbai- 400078</p>
 				<ul>
 					<li><a href="#"><span class="fb"> </span></a></li>
 					<li><a href="#"><span class="twit"> </span></a></li>
@@ -408,7 +445,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="footer-top">
-				<p class="footer-class">© 2015 Paix All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+				<p class="footer-class">© 2016 Bookmyspot All Rights Reserved |</p>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -429,5 +466,100 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	</div>
 	<!--end-footer-->
+
+	<!-- FB login started -->
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '595421003964831',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+	<!-- FB login ended -->
 </body>
 </html>
